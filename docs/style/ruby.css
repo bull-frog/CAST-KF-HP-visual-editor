@@ -6,7 +6,6 @@
 [data-ruby]::before {
 	content: attr(data-ruby);
 	position: absolute;
-	top: -50%;
 	left: 0;
 	right: 0;
 	margin: auto;
@@ -14,4 +13,24 @@
 	font-weight: bold;
 	text-align: center;
 	white-space: nowrap;
+}
+
+h1[data-ruby]::before {
+	top: -50%;
+}
+
+h2[data-ruby]::before {
+	top: -50%;
+}
+
+h3[data-ruby]::before {
+	top: -50%;
+}
+
+h4[data-ruby]::before {
+	top: -50%;
+}
+
+p[data-ruby]::before {
+	top: -50%;
 }

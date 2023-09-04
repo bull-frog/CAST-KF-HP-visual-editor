@@ -40,7 +40,7 @@ article {
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: normal;
+	line-height: 48px;
 }
 
 .chip-container {
@@ -94,8 +94,7 @@ article>h2 {
 	font-size: 20px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 30px;
-	/* 150% */
+	line-height: 40px;
 }
 
 article>h3 {
