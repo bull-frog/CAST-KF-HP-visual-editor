@@ -74,6 +74,8 @@ article {
 	font-style: normal;
 	font-weight: 900;
 	line-height: normal;
+
+	text-transform: uppercase;
 }
 
 article>h2 {
