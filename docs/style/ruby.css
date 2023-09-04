@@ -15,22 +15,26 @@
 	white-space: nowrap;
 }
 
-h1[data-ruby]::before {
+h1 [data-ruby]::before {
+	top: -40%;
+}
+
+h2 [data-ruby]::before {
+	top: -40%;
+}
+
+h3 [data-ruby]::before {
 	top: -50%;
 }
 
-h2[data-ruby]::before {
+h4 [data-ruby]::before {
 	top: -50%;
 }
 
-h3[data-ruby]::before {
-	top: -50%;
+article>p [data-ruby]::before {
+	top: -42%;
 }
 
-h4[data-ruby]::before {
-	top: -50%;
-}
-
-p[data-ruby]::before {
-	top: -50%;
+.image-with-title>p [data-ruby]::before {
+	top: -28%;
 }
