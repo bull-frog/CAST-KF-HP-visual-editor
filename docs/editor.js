@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 		let result = mdToHTML(e.target.value);
 
-		document.title = result.title;
+		// document.title = result.title;
 		document.querySelector("article").innerHTML = result.article;
 		document.querySelector("#code").innerText = result.article;
 
