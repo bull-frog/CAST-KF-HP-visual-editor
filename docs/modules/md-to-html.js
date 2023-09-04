@@ -133,6 +133,8 @@ const mdToHTML = function(md) {
 	const articleLines = md.split("---")[2].split(/\n{2,}/).map(line => line.replaceAll("\n", " "));
 	articleLines.shift(); // 配列の最初に "" が入ってしまうのを防ぐ
 
+	// 箇条書き、数字リストの
+
 	for (let line of articleLines) {
 		if (line.startsWith("## ")) {
 			generatedHTML += `<h2>${insertHyperlink(putRuby(removeUnintendedHTMLTags(line.substring(line.indexOf(" ")))))}</h2>`;
