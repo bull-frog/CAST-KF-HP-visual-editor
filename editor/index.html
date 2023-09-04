@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ビジュアルエディター</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<link rel="stylesheet" href="../style/reset.css">
+		<link rel="stylesheet" href="./editor.css">
+		<link rel="stylesheet" href="../style/master.css">
+		<script type="module" src="editor.js"></script>
+		<script src="file.js"></script>
+	</head>
+	<body>
+		<div id="input-area">
+			<p><a href="https://bull-frog.github.io/ruby-editor/hp/" target="_blank">ふりがなエディターを開く</a>　<a href="https://docs.google.com/document/d/e/2PACX-1vQ_i7te-I8l90TipHajoMkKJjl5UXus-rJ_DXWQnbOO_zi9yGYi8QDXTb7Dj6OpjHibjn0KzPI_nIlp/pub" target="_blank">書き方を見る</a></p>
+			<textarea id="input">
+
+			</textarea>
+		</div>
+		<div id="preview">
+			<article>
+
+			</article>
+		</div>
+		<div id="code" onclick="navigator.clipboard.writeText(document.querySelector('#code').innerText); alert('コピーしました');">
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+	overflow: hidden;
+	margin: 0;
+}
+
+a {
+	color: blue;
+	border-bottom: 1px solid;
+}
+
+textarea {
+	resize: none;
+	width: 100%;
+	padding: 20px;
+	border-radius: 20px;
+	border: none;
+	background-color: #DDFFFF;
+	line-height: 150%;
+	font-family: serif;
+	flex-grow: 1;
+}
+
+#input-area {
+	width: 50vw;
+	height: 80vh;
+	padding: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+#preview {
+	width: 50vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 50vw;
+	overflow-y: scroll;
+}
+
+article {
+	height: 100%;
+	width: 100%;
+	overflow-y: scroll;
+}
+
+#code {
+	width: 50vw;
+	height: 20vh;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 8px;
+	position: fixed;
+	top: 80vh;
+	left: 0;
+	overflow-y: scroll;
+
+	font-size: small;
+	font-family: monospace;
+}
+
+#code::before {
+	content: "クリックしてコピーできます";
+	display: block;
+	background-color: yellow;
+}
