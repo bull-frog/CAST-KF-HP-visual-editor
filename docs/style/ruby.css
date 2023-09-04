@@ -31,7 +31,7 @@ h4 [data-ruby]::before {
 	top: -50%;
 }
 
-article>p [data-ruby]::before {
+article>p [data-ruby]::before, article>ul>li [data-ruby]::before, article>ol>li [data-ruby]::before {
 	top: -42%;
 }
 

@@ -30,7 +30,7 @@ button {
 ol,
 ul,
 menu {
-	list-style: none;
+	/* list-style: none; */
 }
 
 /* For images to not be able to exceed their container */
