@@ -155,7 +155,7 @@ article>p {
 .image-with-title>img {
 	height: 200px;
 	align-self: stretch;
-	background: url(), lightgray 50% / contain no-repeat, #CCC;
+	background: lightgray 50% / contain no-repeat, #CCC;
 }
 
 .image-with-title>p {
