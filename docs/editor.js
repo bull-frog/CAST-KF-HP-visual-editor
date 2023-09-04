@@ -1,4 +1,4 @@
-import { mdToHTML } from "../modules/md-to-html";
+import { mdToHTML } from "../modules/md-to-html.js";
 
 const notSavedMessage = function(e) {
 	return true;
