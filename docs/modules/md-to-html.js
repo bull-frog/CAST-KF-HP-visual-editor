@@ -133,20 +133,57 @@ const mdToHTML = function(md) {
 	const articleLines = md.split("---")[2].split(/\n{2,}/).map(line => line.replaceAll("\n", " "));
 	articleLines.shift(); // 配列の最初に "" が入ってしまうのを防ぐ
 
-	// 箇条書き、数字リストの
+	// 箇条書き、数字リストのフラグ
+	let ulFlag, olFlag;
 
 	for (let line of articleLines) {
+
+		if (line.startsWith("* ")) {
+			// ul
+			if (!ulFlag) {
+				generatedHTML += "<ul>"
+				ulFlag = true;
+			}
+			generatedHTML += `<li>${insertHyperlink(putRuby(removeUnintendedHTMLTags(line.substring(line.indexOf(" ")))))}</li>`;
+			continue;
+		} else {
+			if (ulFlag) {
+				generatedHTML += "</ul>";
+				ulFlag = false;
+			}
+		}
+
+		if (line.startsWith("1. ")) {
+			// ol
+			if (!olFlag) {
+				generatedHTML += "<ol>"
+				olFlag = true;
+			}
+			generatedHTML += `<li>${insertHyperlink(putRuby(removeUnintendedHTMLTags(line.substring(line.indexOf(" ")))))}</li>`;
+			continue;
+		} else {
+			if (olFlag) {
+				generatedHTML += "</ol>";
+				olFlag = false;
+			}
+		}
+
 		if (line.startsWith("## ")) {
+			// H2
 			generatedHTML += `<h2>${insertHyperlink(putRuby(removeUnintendedHTMLTags(line.substring(line.indexOf(" ")))))}</h2>`;
 		} else if (line.startsWith("### ")) {
+			// H3
 			generatedHTML += `<h3>${insertHyperlink(putRuby(removeUnintendedHTMLTags(line.substring(line.indexOf(" ")))))}</h3>`;
 		} else if (line.startsWith("#### ")) {
+			// H4
 			generatedHTML += `<h4>${insertHyperlink(putRuby(removeUnintendedHTMLTags(line.substring(line.indexOf(" ")))))}</h4>`;
 		} else if (/!\[.+?\]\(.+?\)/.test(line)) {
+			// 画像
 			let imageTitle = line.substring(line.indexOf("![") + 2, line.lastIndexOf("]("));
 			let imageSrc = line.substring(line.lastIndexOf("](") + 2, line.lastIndexOf(")"));
 			generatedHTML += `<div class="image-with-title"><img src="${imageSrc}"><p>${insertHyperlink(putRuby(removeUnintendedHTMLTags(imageTitle)))}</p></div>`;
 		} else {
+			// 本文
 			generatedHTML += `<p>${insertHyperlink(putRuby(removeUnintendedHTMLTags(line)))}</p>`;
 		}
 	}
